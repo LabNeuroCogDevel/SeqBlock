@@ -38,6 +38,7 @@ blockSeq = {s.blocks.types{Shuffle([2 3])}};
 if ~ s.flags.initScreen, s = initScreen(s); end
 if ~ s.flags.loadCues,   s = loadCues(s)  ; end
 
+% instruction display probably handled by wrapper
 if runnum==1
   %instructions(s);
 end

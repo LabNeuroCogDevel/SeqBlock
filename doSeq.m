@@ -1,5 +1,5 @@
 function doSeq
-autopilot = 0; % prompt subject to continue with next run
+
 
 subjID = input('Subject ID: ', 's');
 
@@ -8,7 +8,13 @@ subjID = input('Subject ID: ', 's');
 %  s.display.w
 s = initScreen(getSettings([],subjID));
 s = loadCues(s);
-instructions(s)
+
+s.autopilot=1 % prompt subject to continue with next run
+
+if ~s.autopilot
+  instructions(s)
+end
+
 
 for runnum = 1:s.totalruns
     
@@ -21,7 +27,7 @@ for runnum = 1:s.totalruns
     end
     
     % let user say when to go
-    if(~autopilot)
+    if(~s.autopilot)
         DrawFormattedText(s.display.w,'Push any key when you are ready','center','center');
         Screen('Flip', s.display.w);
         KbWait()

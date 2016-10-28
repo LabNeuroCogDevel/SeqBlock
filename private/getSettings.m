@@ -1,5 +1,6 @@
 function s = getSettings(s, subjID)
 
+s.autopilot = 0; % mabye someday autopilot will actually work :)
 s.visittype='behave';
 
 s.info.ID = subjID;
@@ -18,6 +19,7 @@ s.dur.cue = 2;
 s.dur.cueRespTime = 1.5;
 s.dur.view = 2;
 s.dur.ret = 3;
+s.dur.showBlockType = 3;
 
 s.dur.test_cue = 2;
 s.dur.test_ret = 3;

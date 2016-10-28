@@ -55,6 +55,14 @@ allevs.trial = [];
 allevs.type = {};
 
 for blocki = 1:s.blocks.num
+    
+    % block type text display
+    triali=1;
+    allevs.times(end+1) = ev.trial(triali).cue(blocki)-s.dur.showBlockType;
+    allevs.block(end+1) = blocki;
+    allevs.trial(end+1) = triali;
+    allevs.type{end+1} = 'showBlockType';
+
     for triali = 1:s.trials.num
     
         % cue

@@ -32,7 +32,7 @@ switch evType
         endTime = startTime + evTime + s.dur.ret;
         [s, retseq, eval, rtvec] = testSequence(s, runnum, blocki, triali,thisTrialSeq, endTime, evType);
         
-        
-        
+    case 'showBlockType'    
+        showBlockType(s,startTime+evTime,blockType)
 end
 
