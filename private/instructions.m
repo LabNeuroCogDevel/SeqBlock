@@ -1,5 +1,9 @@
 function instructions(s)
 
+% test with:
+% instructions(loadCues(initScreen(getSettings([],'test'))))
+
+%%
 WaitSecs(0.5);
 DrawFormattedText(s.display.w,...
                     ['In this game, you will try\n\n',...
@@ -36,9 +40,9 @@ DrawFormattedText(s.display.w, ...
                     'center','center', s.display.textColor);
 Screen('Flip', s.display.w);
 KbWait;
-getCueChoice(s, 1, 1, 1, [], GetSecs, 0, 'yolked', 'instructions')
-getCueChoice(s, 1, 1, 1, [], GetSecs, 0, 'yolked', 'instructions')
-getCueChoice(s, 1, 1, 1, [], GetSecs, 0, 'yolked', 'instructions')
+getCueChoice(s, 1, 1, 2, [], GetSecs, 0, 'yoked', 'instructions')
+getCueChoice(s, 1, 1, 1, [], GetSecs, 0, 'yoked', 'instructions')
+getCueChoice(s, 1, 1, 2, [], GetSecs, 0, 'yoked', 'instructions')
 
 
 

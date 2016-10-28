@@ -13,10 +13,15 @@ texFade = reshape( s.cues.texture_faded(runnum,blocki,:),1,2);
 
 if strcmp(evType, 'instructions') | strcmp(evType, 'instructions_test')
     
+    % never gets here!
     if strcmp(evType, 'test_cue')
         forceSelect = triali;
+    % not forced for choice
     elseif strcmp(blockType, 'choice')
         forceSelect = [];
+    %for based on trialnumber for yoked
+    elseif strcmp(blockType, 'yoked')
+        forceSelect = triali;
     else
         forceSelect = randi(2, [1 1]);
     end

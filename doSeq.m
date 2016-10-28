@@ -9,7 +9,7 @@ subjID = input('Subject ID: ', 's');
 s = initScreen(getSettings([],subjID));
 s = loadCues(s);
 
-s.autopilot=1 % prompt subject to continue with next run
+s.autopilot=0; % prompt subject to continue with next run
 
 if ~s.autopilot
   instructions(s)
