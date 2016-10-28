@@ -5,6 +5,12 @@ for seq = 1:2
     texFade(seq) = s.cues.instruct_texture(seq);
 end
 
+% tex and faded created by loadCues and saved into s
+% size(s.cues.texture) =     5     2     2
+% size(tex)= 1 2 --probably dont need to reshape, but looks nice debugging
+tex     = reshape( s.cues.texture(runnum,blocki,:),      1,2);
+texFade = reshape( s.cues.texture_faded(runnum,blocki,:),1,2);
+
 if strcmp(evType, 'instructions') | strcmp(evType, 'instructions_test')
     
     if strcmp(evType, 'test_cue')

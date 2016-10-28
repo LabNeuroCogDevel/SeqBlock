@@ -8,7 +8,6 @@ subjID = input('Subject ID: ', 's');
 %  s.display.w
 s = initScreen(getSettings([],subjID));
 s = loadCues(s);
-
 instructions(s)
 
 for runnum = 1:s.totalruns
