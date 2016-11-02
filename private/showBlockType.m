@@ -1,5 +1,10 @@
-function showBlockType(s,when,evType)
-        endTime = when + s.dur.showBlockType;
+function t=showBlockType(s,when,evType)
+
+        if s.autopilot
+            endTime = when + .5;
+        else
+            endTime = when + s.dur.showBlockType;
+        end
         
         %Choice or fixed
         disptext=evType;
@@ -16,5 +21,7 @@ function showBlockType(s,when,evType)
         while(GetSecs() < endTime )
            WaitSecs(0.005);
         end
+        
+        t=GetSecs();
 
 end

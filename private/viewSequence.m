@@ -15,8 +15,14 @@ function viewSequence(s, runnum, blocki, triali, thisTrialSeq)
     end
 seq
 
-
-    viewTime = s.dur.view / s.params.seqLength;
+    % how long do we see each filled circle
+    if s.autopilot
+        viewTime=.1;
+    else
+        viewTime = s.dur.view / s.params.seqLength;
+    end
+    
+    
     for i = 1:s.params.seqLength
 
         seqVis = repmat('.', [1 s.responses.numTargets]);

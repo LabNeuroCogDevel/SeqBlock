@@ -111,3 +111,15 @@ for blocki = 1:s.blocks.num
 end
 
 ev.allevs = allevs;
+
+%% if we are on autopilot rewrite all timings 
+if s.autopilot
+    normaldur=1;
+    retdur=1;
+    seq=repmat(normaldur,size(ev.allevs.times));
+    % find all of type 'ret' (including 'test_ret')
+    retidx=cellfun(@(x) ~isempty(x)&&x==1, regexp('ret',ev.allevs.type) );
+    
+    seq(retidx)=retdur;
+    ev.allevs.times = cumsum(seq);
+end
